@@ -1,0 +1,12 @@
+{
+  "name": "m2ctool",
+  "description": "A tool to probe i2c devices on MRAA based systems",
+  "version": "1.0.0",
+  "main": "m2ctool.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "minimist": "^1.1.1"
+  }
+}
