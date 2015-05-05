@@ -248,7 +248,6 @@ function isValidBus(){
     } else {
         try{
             x = new mraa.I2c(t);
-            x.frequency(MRAA_I2C_STD); 
             return(true); 
         } catch (ex) {
             console.log("No i2c bus found at " + t); 
