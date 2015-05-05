@@ -1,3 +1,8 @@
+#!/usr/bin/env node 
+ 
+/*jslint node:true, vars:true, bitwise:true, unparam:true */
+/*jshint unused:true */
+
 /*
 The MIT License (MIT)
 
@@ -21,10 +26,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-#!/usr/bin/env node 
- 
-/*jslint node:true, vars:true, bitwise:true, unparam:true */
-/*jshint unused:true */
+
 
 
 
@@ -39,7 +41,7 @@ console.log('MRAA Version: ' + mraa.getVersion()); //write the mraa version to t
 console.log('Platform Name: ' + mraa.getPlatformName()); 
 
 var t;  //Will hold bus number.
-var x;  //Will hodl device object.
+var x;  //Will hold device object.
 
 /*
     Determine which action. If parameters are incorrect give help. 
@@ -176,6 +178,7 @@ function scan( ) {
 
     for(var j = 0; j < 120; j++ ){
         x.address(j); 
+        
 
         if( x.readWordReg(0) !== 0 ) {
             string += " " + j.toString(16); 
@@ -245,6 +248,7 @@ function isValidBus(){
     } else {
         try{
             x = new mraa.I2c(t);
+            x.frequency(MRAA_I2C_STD); 
             return(true); 
         } catch (ex) {
             console.log("No i2c bus found at " + t); 
