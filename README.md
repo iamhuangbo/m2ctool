@@ -32,28 +32,29 @@ Usage
 =========================
 m2ctool -- a tool to scan i2c buses on MRAA based systems
 Some device info:
-Intel Edison on mini-breakout board can use i2c bus 1 and 6
-Intel Edison on Arduino board can use i2c bus 6
-Intel Galileo can use i2c bus 0
+- Intel Edison on mini-breakout board can use i2c bus 1 and 6
+- Intel Edison on Arduino board can use i2c bus 6
+- Intel Galileo can use i2c bus 0
 
 Use of this script is at your own risk
 
-Topic help is avaialble -- mctools help <scan|dump|get|set>
+Topic help is avaialble -- mctools help (scan|dump|get|set)
+
 scan for devices on an i2c bus
-usage -- m2ctool scan <bus number>
+- usage -- m2ctool scan (bus number)
 
 dump  the registers of a device
-usage -- m2ctool dump <bus number> <device address> <optional -s -l length>
-where -s is swap byte order and -l is the number of registers to return (255 default)
-example -- m2ctool dump 6 0x18 -s -l13
+- usage -- m2ctool dump (bus number) (device address) (optional -s -l)
+- where -s is swap byte order and -l is the number of registers to return (255 default)
+- example -- m2ctool dump 6 0x18 -s -l13
 
 get the value a register of a device
-usage -- m2ctool get <bus number> <device address> <register address> <optional -s>
-where -s is swap byte order
+- usage -- m2ctool get (bus number) (device address) (register address) (optional -s)
+- where -s is swap byte order
 
 set the value of a device register
-usage -- m2ctool set <bus number> <device address> <register address> <data>
-data should be in hexadecimal format
+- usage -- m2ctool set (bus number) (device address) (register address) (data)
+- data should be in hexadecimal format
 
 
  App Files
