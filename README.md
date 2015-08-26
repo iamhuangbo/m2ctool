@@ -51,8 +51,7 @@ usage -- m2ctool get <bus number> <device address> <register address> <optional 
 where -s is swap byte order
 
 set the value of a device register
-usage -- m2ctool set <bus number> <device address> <register address> <data> <optional -s>
-where -s is swap byte order
+usage -- m2ctool set <bus number> <device address> <register address> <data>
 data should be in hexadecimal format
 
 

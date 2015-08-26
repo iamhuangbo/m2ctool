@@ -33,8 +33,12 @@ THE SOFTWARE.
 var mraa = require('mraa'); //require mraa
 var parseArgs = require('minimist'); 
 
+
+
 var args = process.argv.slice(2); 
+
 argv = parseArgs(args); 
+
 
 console.log('MRAA Version: ' + mraa.getVersion()); //write the mraa version to the Intel XDK console
 //console.log('Platform Type: ' + mraa.getPlatformType()); 
@@ -70,11 +74,10 @@ switch(argv['_'][0]) {
             break;
         case 'set' :
             if(!isValidBus() || argv['_'].length < 5){
-                help('get'); 
+                help('set'); 
             } else {
                 set(argv['_'][2], argv['_'][3], argv['_'][4], argv['s'] === true);
             }  
-            console.log('set'); 
             break;
         case 'help' :
             if(argv['_'].length === 2){
@@ -118,8 +121,8 @@ function help(type) {
                 if(type !== 'all') break; 
             case 'set' :
                 console.log('set the value of a device register');
-                console.log('usage -- m2ctool set <bus number> <device address> <register address> <data> <optional -s>'); 
-                console.log('where -s is swap byte order'); 
+                console.log('usage -- m2ctool set <bus number> <device address> <register address> <data>'); 
+                //console.log('where -s is swap byte order'); 
                 console.log('data should be in hexadecimal format\n'); 
                 break; 
             default:  
@@ -150,11 +153,11 @@ function set(device , register, data , swap ) {
     
     swap = typeof swap !== 'undefined' ? swap : false ;  
     
-    data = parseHex(data); 
+    //data = parseHex(data); 
 
-    if(swap){
-        data =  swapbytes(data);     
-    }
+    //if(swap){
+    //    data =  swapbytes(data);     
+    //}
     
     x.address(parseInt(device)); 
     
@@ -236,6 +239,8 @@ function swapbytes(byte){
 
 
 function parseHex(hex) {
+    
+    console.log(hex); 
     return hex.replace(/\\x([a-fA-F0-9]{2})/g, function(a,b){
         return String.fromCharCode(parseInt(b,16));
     });
