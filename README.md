@@ -30,29 +30,29 @@ Set permissions on m2ctool -- chmod u+x m2ctool to make executable
  
 Usage
 =========================
-m2ctool -- a tool to scan i2c buses on MRAA based systems\n
-Some device info:\n
-Intel Edison on mini-breakout board can use i2c bus 1 and 6\n
-Intel Edison on Arduino board can use i2c bus 6\n
-Intel Galileo can use i2c bus 0\n
+m2ctool -- a tool to scan i2c buses on MRAA based systems
+Some device info:
+Intel Edison on mini-breakout board can use i2c bus 1 and 6
+Intel Edison on Arduino board can use i2c bus 6
+Intel Galileo can use i2c bus 0
 
-Use of this script is at your own risk\n
+Use of this script is at your own risk
 
-Topic help is avaialble -- mctools help '<scan|dump|get|set>'\n
-scan for devices on an i2c bus\n
-usage -- m2ctool scan '<bus number>'\n
+Topic help is avaialble -- mctools help <scan|dump|get|set>
+scan for devices on an i2c bus
+usage -- m2ctool scan <bus number>
 
-dump  the registers of a device\n
-usage -- m2ctool dump '<bus number>' '<device address>' '<optional -s -l>'\n
-where -s is swap byte order and -l is the number of registers to return (255 default)\n
-example -- m2ctool dump 6 0x18 -s -l13\n
+dump  the registers of a device
+usage -- m2ctool dump <bus number> <device address> <optional -s -l length>
+where -s is swap byte order and -l is the number of registers to return (255 default)
+example -- m2ctool dump 6 0x18 -s -l13
 
-get the value a register of a device\n
-usage -- m2ctool get '<bus number>' '<device address>' '<register address>' '<optional -s>'\n
+get the value a register of a device
+usage -- m2ctool get <bus number> <device address> <register address> <optional -s>
 where -s is swap byte order
 
-set the value of a device register\
-usage -- m2ctool set '<bus number>' '<device address>' '<register address>' '<data>'\n
+set the value of a device register
+usage -- m2ctool set <bus number> <device address> <register address> <data>
 data should be in hexadecimal format
 
 
